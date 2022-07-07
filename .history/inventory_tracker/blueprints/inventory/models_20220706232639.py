@@ -12,4 +12,4 @@ class Inventory(db.Model):
     amazon_asin = db.Column(db.String(100))
     retailer_asin = db.Column(db.String(100))
     item_returned = db.Column(db.String(100))
-    refunded_amount = db.Column(db.String(100))
+    refunded_amount 
