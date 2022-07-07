@@ -9,3 +9,5 @@ class Inventory(db.Model):
     item_price = db.Column(db.Float)
     item_tax = db.Column(db.Float)
     retailer = db.Column(db.String(100))
+    amazon_asin = db.Column(db.String(100))
+    retailer_asin = db.Column(db.String(100))
