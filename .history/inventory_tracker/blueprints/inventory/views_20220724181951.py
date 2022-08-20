@@ -17,18 +17,13 @@ def manage_inventory():
         the_csv_file = form.file.data
         the_csv_file.save('inventory_tracker/blueprints/inventory/temp_folder/tempfile.csv')
 
-        with open('inventory_tracker/blueprints/inventory/temp_folder/tempfile.csv', 'r', encoding='utf-8-sig') as f:
+        with open('inventory_tracker/blueprints/inventory/temp_folder/tempfile.csv', 'r', encoding='utf-8') as f:
             datareader = csv.DictReader(f)
             rmv_empty_row=[*filter(len,datareader)]
-            values=rmv_empty_row
-            for value in values:
-                print(value)
-
-            ins = db.insert(Inventory).values(values)
-            print(str(ins))
-            db.session.execute(ins)
+            values=[*rmv_empty_row]
+            ins = db.insert(Inventory)
+            db.session.execute(ins,values)
             db.session.commit()
-            db.session.close_all()
         
         os.remove('inventory_tracker/blueprints/inventory/temp_folder/tempfile.csv')
         flash('Uploaded Bulk File', 'success')

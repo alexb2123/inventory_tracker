@@ -15,6 +15,6 @@ class Inventory(db.Model):
     RefundedAmount = db.Column(db.Float)
     OrderNumber = db.Column(db.String(100))
     OrderDate = db.Column(db.String(100))
-    BundleQty = db.Column(db.Integer)
+    BndlQty = db.Column(db.Integer)
     RebateUsed = db.Column(db.String(100))
     Destination = db.Column(db.String(4))

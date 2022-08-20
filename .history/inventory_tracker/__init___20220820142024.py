@@ -20,7 +20,7 @@ def init_app():
 #    app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get(
 #        "DATABASE_URI1"
 #        )#os.getenv("SQLALCHEMY_DATABASE_URI1")#'mysql+pymysql://doadmin:AVNS_43F-8yARLhB1kfH@db-mysql-nyc3-64061-do-user-6928885-0.b.db.ondigitalocean.com:25060/defaultdb' #os.getenv("SQLALCHEMY_DATABASE_URI")
-    database = 'sqlite:////Users/adb/databases/Inventory.db'
+    database = '/Users/adb/databases/Inventory.db'
 
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     SECRET_KEY= os.urandom(32)
