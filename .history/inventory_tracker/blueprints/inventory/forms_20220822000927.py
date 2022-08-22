@@ -3,7 +3,6 @@ from tokenize import ContStr
 from flask.app import Flask
 from flask_wtf import FlaskForm
 from wtforms import StringField, DateField
-from wtforms.validators import DataRequired
 from flask_wtf.file import FileAllowed, FileField, FileRequired
 from wtforms.fields.simple import SubmitField
 
@@ -25,5 +24,5 @@ class BulkUpload(FlaskForm):
 
 class InventoryStats(FlaskForm):
     sdate = DateField('Start Date', validators=[DataRequired()])
-    edate = DateField('End Date', validators=[DataRequired()])
+    edate = ''
     

@@ -25,5 +25,5 @@ class BulkUpload(FlaskForm):
 
 class InventoryStats(FlaskForm):
     sdate = DateField('Start Date', validators=[DataRequired()])
-    edate = DateField('End Date', validators=[DataRequired()])
+    edate = ''
     

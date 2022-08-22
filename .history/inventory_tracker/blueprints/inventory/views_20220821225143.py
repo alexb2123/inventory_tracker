@@ -21,11 +21,11 @@ def manage_inventory():
             datareader = csv.DictReader(f)
             rmv_empty_row=[*filter(len,datareader)]
             values=rmv_empty_row
-#            for value in values:
-#                print(value)
+            for value in values:
+                print(value)
 
             ins = db.insert(Inventory).values(values)
-#            print(str(ins))
+            print(str(ins))
             db.session.execute(ins)
             db.session.commit()
             db.session.close_all()
@@ -36,16 +36,6 @@ def manage_inventory():
 
     return render_template("manage_inventory.html", form=form)
 
-@inventory_bp.route("/prep_shipment", methods=["GET", "POST"])
-def prep_shipment():
-    pass
-
-@inventory_bp.route("/inventory_stats", methods=["GET", "POST"])
-def inventory_stats():
-    #check orders placed based on order date range
-    #check total spent based on date range
-    #check total count based on date range
-    
-
-
+@inventory_bp.route("/prep", methods=["GET", "POST"])
+def manage_inventory():
     pass

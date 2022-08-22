@@ -45,7 +45,6 @@ def inventory_stats():
     #check orders placed based on order date range
     #check total spent based on date range
     #check total count based on date range
-    
 
 
     pass

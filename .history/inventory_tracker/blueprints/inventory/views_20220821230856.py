@@ -37,15 +37,9 @@ def manage_inventory():
     return render_template("manage_inventory.html", form=form)
 
 @inventory_bp.route("/prep_shipment", methods=["GET", "POST"])
-def prep_shipment():
+def manage_inventory():
     pass
 
-@inventory_bp.route("/inventory_stats", methods=["GET", "POST"])
-def inventory_stats():
-    #check orders placed based on order date range
-    #check total spent based on date range
-    #check total count based on date range
-    
-
-
+@inventory_bp.route("/prep_shipment", methods=["GET", "POST"])
+def manage_inventory():
     pass

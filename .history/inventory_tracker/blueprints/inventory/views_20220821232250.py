@@ -42,10 +42,5 @@ def prep_shipment():
 
 @inventory_bp.route("/inventory_stats", methods=["GET", "POST"])
 def inventory_stats():
-    #check orders placed based on order date range
-    #check total spent based on date range
-    #check total count based on date range
     
-
-
     pass
