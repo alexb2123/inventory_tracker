@@ -54,15 +54,9 @@ def inventory_stats():
     #check total count based on date range
 
     total_spend = db.session.query(func.sum(Inventory.ItemPrice).label('total_spend')).first()#.filter(Inventory.RefundedAmount)
-    print('total spend before returns')
-    print('-------------')    
     print(total_spend.total_spend)
 
-    total_returns= db.session.query(func.sum(Inventory.RefundedAmount).label('refund_total')).first()
-
-    after_returns = (total_spend.total_spend - total_returns.refund_total)
-    print('total spend after returns')
-    print('-------------')
+    after_returns = (total_spend- (db.session.query(func.sum(Inventory.RefundedAmount).label('refund_total')).first()))
     print(after_returns)
 
     return render_template("inventory_stats.xhtml")#, form=form)

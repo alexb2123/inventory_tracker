@@ -28,8 +28,7 @@ def init_app():
     app.config["SECRET_KEY"] = SECRET_KEY
     app.config["SQLALCHEMY_BINDS"] = {
 
-    'defaultdb': database
-    #os.environ.get('DATABASE_URI1'),
+    'defaultdb': database#os.environ.get('DATABASE_URI1'),
     #'content': os.environ.get('SQLALCHEMY_DATABASE_URI2'),
     #'applicant_tracker':os.environ.get('SQLALCHEMY_DATABASE_URI3')
     #

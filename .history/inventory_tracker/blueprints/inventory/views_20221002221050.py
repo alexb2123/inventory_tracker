@@ -58,9 +58,9 @@ def inventory_stats():
     print('-------------')    
     print(total_spend.total_spend)
 
-    total_returns= db.session.query(func.sum(Inventory.RefundedAmount).label('refund_total')).first()
+    total_returns= db.session.query(func.sum(Inventory.RefundedAmount).label('refund_total')).first())
 
-    after_returns = (total_spend.total_spend - total_returns.refund_total)
+    after_returns = (total_spend- total_returns)
     print('total spend after returns')
     print('-------------')
     print(after_returns)

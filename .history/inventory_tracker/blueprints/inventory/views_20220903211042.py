@@ -1,12 +1,11 @@
 from flask import Blueprint, render_template
 from ... import app, db
-from inventory_tracker.blueprints.inventory.forms import BulkUpload, InventoryStats
+from inventory_tracker.blueprints.inventory.forms import BulkUpload
 import csv
 from inventory_tracker.blueprints.inventory.models import Inventory
 import os
 from flask.helpers import flash, url_for
 from werkzeug.utils import redirect, secure_filename
-from sqlalchemy import func
 
 inventory_bp = Blueprint('inventory_bp', __name__, template_folder='templates')
 
@@ -43,26 +42,12 @@ def prep_shipment():
 
 @inventory_bp.route("/inventory_stats", methods=["GET", "POST"])
 def inventory_stats():
-#    form = InventoryStats()
-#    start_date = form.sdate.data
-#    end_date = form.edate.data
-#
-#    if form.validate_on_submit():
-#        None
+    start_date = None
+    end_date = none
     #check orders placed based on order date range
     #check total spent based on date range
     #check total count based on date range
+    
 
-    total_spend = db.session.query(func.sum(Inventory.ItemPrice).label('total_spend')).first()#.filter(Inventory.RefundedAmount)
-    print('total spend before returns')
-    print('-------------')    
-    print(total_spend.total_spend)
 
-    total_returns= db.session.query(func.sum(Inventory.RefundedAmount).label('refund_total')).first()
-
-    after_returns = (total_spend.total_spend - total_returns.refund_total)
-    print('total spend after returns')
-    print('-------------')
-    print(after_returns)
-
-    return render_template("inventory_stats.xhtml")#, form=form)
+    pass

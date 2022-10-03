@@ -19,4 +19,4 @@ class Inventory(db.Model):
     RebateUsed = db.Column(db.String(100))
     Destination = db.Column(db.String(4))
     price_min = db.Column(db.Float)
-    price_max = db.Column(db.Float)
+    price_max = 
