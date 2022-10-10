@@ -53,34 +53,16 @@ def inventory_stats():
     #check total spent based on date range
     #check total count based on date range
 
-    total_spend = db.session.query(func.sum(Inventory.ItemPrice).label('total_spend')).first()
+    total_spend = db.session.query(func.sum(Inventory.ItemPrice).label('total_spend')).first()#.filter(Inventory.RefundedAmount)
     print('total spend before returns')
-    print('-------------')
+    print('-------------')    
     print(total_spend.total_spend)
 
     total_returns= db.session.query(func.sum(Inventory.RefundedAmount).label('refund_total')).first()
-    print('this is the type for returns')
-
 
     after_returns = (total_spend.total_spend - total_returns.refund_total)
     print('total spend after returns')
     print('-------------')
     print(after_returns)
 
-    item_count = db.session.query(func.count(Inventory.ID)).filter(Inventory.ItemReturned=='')
-
-    print('this is the item count after returns')
-    print('-------------')
-    print(item_count)
-
-
-    return render_template("inventory_stats.xhtml", 
-    total_spend=total_spend.total_spend, 
-    total_refund=total_returns.refund_total, 
-    after_refunds=after_returns,
-    item_count=item_count)
-
-
-@inventory_bp.route("/modify_inventory", methods=["GET", "POST"])
-def modify_inventory():
-    pass
+    return render_template("inventory_stats.xhtml", total_spend=total_spend,)#, form=form)

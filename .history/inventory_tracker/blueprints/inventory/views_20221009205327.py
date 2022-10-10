@@ -67,7 +67,7 @@ def inventory_stats():
     print('-------------')
     print(after_returns)
 
-    item_count = db.session.query(func.count(Inventory.ID)).filter(Inventory.ItemReturned=='')
+    item_count = db.session.query(func.count(Inventory.ID)).filter(Inventory.ItemReturned==0)
 
     print('this is the item count after returns')
     print('-------------')
@@ -77,8 +77,7 @@ def inventory_stats():
     return render_template("inventory_stats.xhtml", 
     total_spend=total_spend.total_spend, 
     total_refund=total_returns.refund_total, 
-    after_refunds=after_returns,
-    item_count=item_count)
+    after_refunds=after_returns)
 
 
 @inventory_bp.route("/modify_inventory", methods=["GET", "POST"])

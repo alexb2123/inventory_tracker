@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Inventory Tracker</h1>     
+    </body>
+    <div class="container center">
+        <!-- ... -->
+              <div class="formwrapper callsurveyformat" >
+    
+                <h2 class="title center" style="padding:50px;">Inventory Stats</h2>
+    
+                <form method="POST" action="{{ url_for('inventory_bp.inventory_stats') }}" enctype="multipart/form-data">
+                  <div class="form-field file">
+                    <label class="file is-normal">
+   
+                  </div>
+    
+                  <div class="form-field" style="margin: 10px">
+
+                  </div>
+
+                </form>    
+
+                <div>
+                            <article class="tile is-child box">
+                                <p class="title">{{ count }}</p>
+                                <p class="subtitle"> Total Spend</p>
+                            </article>                  
+                </div>
+    
+              </div>
+        </div>
+</html>

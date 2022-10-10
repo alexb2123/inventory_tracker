@@ -78,7 +78,7 @@ def inventory_stats():
     total_spend=total_spend.total_spend, 
     total_refund=total_returns.refund_total, 
     after_refunds=after_returns,
-    item_count=item_count)
+    )
 
 
 @inventory_bp.route("/modify_inventory", methods=["GET", "POST"])
